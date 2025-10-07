@@ -270,3 +270,59 @@ h1 {
         padding: 10px;
     }
 }
+
+/* Adicionar estas regras */
+
+/* Melhorar acessibilidade do foco */
+.menu-link:focus,
+.botao-form:focus,
+.campo-form:focus {
+    outline: 2px solid var(--primaria);
+    outline-offset: 2px;
+}
+
+/* Melhorar responsividade do menu */
+@media (max-width: 768px) {
+    .menu {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+    .cabecalho-sub-titulo {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+
+/* Corrigir a classe da imagem dos projetos */
+.projetos-image { /* estava .projetos-imagem no CSS mas .projetos-image no HTML */
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Adicionar smooth scroll para todos os elementos */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Melhorar o hover dos cards */
+.projetos-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projetos-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+}
+
+/* Ajustar o sobre-caixa */
+.sobre-caixa {
+    max-width: 800px; /* estava 800rem */
+    margin: 0 auto;
+}

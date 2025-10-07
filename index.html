@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Bruno Santos - Desenvolvedor Full Stack">
+    <meta name="keywords" content="desenvolvedor, full stack, programador, portfolio">
     <link rel="stylesheet" href="styles.css">
-    <title>Bruno Santos | Portfólio</title>
+    <title>Bruno Santos | Desenvolvedor Full Stack</title>
 </head>
 
 <body>
@@ -29,9 +31,9 @@
         </ul>
     </nav>
 
-    <main id="Início" class="cabecalho">
-        <img src="https://scontent.fcpq17-1.fna.fbcdn.net/v/t1.15752-9/505468720_1736866127714113_255784882709497610_n.jpg?stp=dst-jpg_p480x480_tt6&_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=sHlgxzvA4z4Q7kNvwE8hYqT&_nc_oc=Adn49AYNIUaI-KZ9a2HxMETw2HptrDw5_lDQYVAkL600GU-nMQz6uxjp_eRCgHOM5nqTbirrke5Hh2La0S63n15o&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fcpq17-1.fna&oh=03_Q7cD2gHazKXQvfk2-g297WnQ4Tr40K95umFltmHzWJtk5uQwwg&oe=6876A2A7"
-            alt="Foto de Bruno Santos" class="foto-perfil">
+    <main id="inicio" class="cabecalho">
+        <img src="img/ft-perfil.jpg"
+            alt="Foto de Bruno Santos" class="foto-perfil" loading="lazy">
 
 
 <div class="social-icons">
@@ -82,6 +84,26 @@
     <section id="projetos" class="projetos">
         <h2 class="projetos-titulo">Meus Projetos</h2>
         <div class="projetos-caixa">
+
+            <a href="https://trackcrypto.site" target="_blank">
+    <div class="projetos-card">
+        <img src="img/Screenshot_193.png" alt="Projeto 1" class="projetos-image">
+        <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Track Crypto</h3>
+            <p class="paragrafo-projetos">Plataforma para rastreamento de criptomoedas em tempo real, com gráficos interativos e atualizações instantâneas dos mercados</p>
+        </div>
+    </div>
+</a>
+
+<a href="https://dopamineclicker.netlify.app/" target="_blank">
+    <div class="projetos-card">
+        <img src="img/Screenshot_192.png" alt="Projeto 1" class="projetos-image">
+        <div class="caixa-textos-projeto">
+            <h3 class="info-projetos">Dopamine Clicker</h3>
+            <p class="paragrafo-projetos">Experiência interativa sobre o sistema de recompensa cerebral, combinando gamificação e conceitos de neurociência</p>
+        </div>
+    </div>
+</a>
 
   <a href="https://devbrunoss.github.io/Loja-Tecnologia/" target="_blank">
     <div class="projetos-card">
@@ -146,22 +168,37 @@
     </section>
 
     <script>
-        function enviarWhats(event) {
-            event.preventDefault()
+       function enviarWhats(event) {
+    event.preventDefault();
 
+    const nome = document.getElementById('nome').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+    const telefone = '5512981282456';
 
-            const nome = document.getElementById('nome').value;
-            const mensagem = document.getElementById('mensagem').value;
-            const telefone = '5512981282456'
+    // Validação dos campos
+    if (!nome || !mensagem) {
+        alert('Por favor, preencha seu nome e mensagem!');
+        return false;
+    }
 
-            const texto = `Olá, Me chamo ${nome}, ${mensagem}`
-            const msgFormatada = encodeURIComponent(texto)
+    // Mensagem mais profissional
+    const texto = `Olá! Meu nome é ${nome}. ${mensagem}`;
+    const msgFormatada = encodeURIComponent(texto);
 
-            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
-
-            window.open(url, '_blank')
-        }
+    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+    
+    // Abre em nova aba e limpa o formulário
+    window.open(url, '_blank');
+    
+    // Limpa os campos após enviar
+    document.getElementById('nome').value = '';
+    document.getElementById('mensagem').value = '';
+    
+    return false;
+}
     </script>
+
+<script src="script.js"></script>
 
 </body>
 
